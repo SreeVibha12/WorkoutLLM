@@ -3,35 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Selector</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Workout Customizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Customize Your Workout Routine</h1>
-    
-    <section id="equipment-selection">
-        <h2>Select Your Equipment</h2>
-        <label><input type="checkbox" value="bodyweight"> Bodyweight</label>
-        <label><input type="checkbox" value="dumbbell"> Dumbbell</label>
-        <label><input type="checkbox" value="barbell"> Barbell</label>
-        <label><input type="checkbox" value="kettlebell"> Kettlebell</label>
-        <label><input type="checkbox" value="band"> Band</label>
-        <label><input type="checkbox" value="plate"> Plate</label>
-        <label><input type="checkbox" value="pullup-bar"> Pull-up Bar</label>
-        <label><input type="checkbox" value="bench"> Bench</label>
-    </section>
+    <header>
+        <h1>WORKOUTLLM</h1>
+    </header>
 
-    <section id="muscle-targeting">
-        <h2>Select Muscles to Target</h2>
-        <!-- Add images for front and back muscle views here -->
-        <img src="front-view.jpg" alt="Front View of Muscles" id="front-view">
-        <img src="back-view.jpg" alt="Back View of Muscles" id="back-view">
-    </section>
+    <div id="equipment-selection" class="section-header">
+        <h2>Select Equipment</h2>
+        <div class="cube">
+            <img src="images/body.png" alt="Bodyweight" style="width: 500px; height: 50px;" />
+            <label><input type="checkbox" name="equipment" value="bodyweight" checked> Bodyweight</label>
+        </div>
+        <div class="cube">
+            <img src="images/dumbbell.png" alt="Dumbbell" style="width: 500px; height: 50px;"/>
+            <label><input type="checkbox" name="equipment" value="dumbbell"> Dumbbell</label>
+        </div>
+        <div class="cube">
+            <img src="images/barbell.png" alt="Barbell" style="width: 500px; height: 50px;"/>
+            <label><input type="checkbox" name="equipment" value="barbell"> Barbell</label>
+        </div>
+        <div class="cube">
+            <img src="images/kettlebell.png" alt="Kettlebell" style="width: 500px; height: 50px;" />
+            <label><input type="checkbox" name="equipment" value="kettlebell"> Kettlebell</label>
+        </div>
+        <div class="cube">
+            <img src="images/band.png" alt="Resistance Band" style="width: 500px; height: 50px;"/>
+            <label><input type="checkbox" name="equipment" value="band"> Resistance Band</label>
+        </div>
+        <div class="cube">
+            <img src="images/plate.png" alt="Weight Plate" style="width: 500px; height: 50px;"/>
+            <label><input type="checkbox" name="equipment" value="plate"> Weight Plate</label>
+        </div>
+        <div class="cube">
+            <img src="images/pullupbar.png" alt="Pull-Up Bar"style="width: 500px; height: 50px;" />
+            <label><input type="checkbox" name="equipment" value="pull_up_bar"> Pull-Up Bar</label>
+        </div>
+        <div class="cube">
+            <img src="images/bench.png" alt="Bench" style="width: 500px; height: 50px;"/>
+            <label><input type="checkbox" name="equipment" value="bench"> Bench</label>
+        </div>
+    </div>
 
-    <section id="exercise-display">
-        <h2>Your Exercises</h2>
-        <ul id="exercise-list"></ul>
-    </section>
+    <div id="muscle-selection">
+        <h2>Select Muscle Group</h2>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Chest"> Chest</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Triceps"> Triceps</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Back"> Back</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Biceps"> Biceps</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Shoulders"> Shoulders</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Abs"> Abs</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Legs"> Legs</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Core"> Core</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="Cardio"> Cardio</label>
+        </div>
+        <div class="cube">
+            <label><input type="checkbox" name="muscle" value="FullBody"> Full Body</label>
+        </div>
+    </div>
+
+    <h2>Your Exercises</h2>
+    <ul id="exercise-list"></ul>
 
     <script src="script.js"></script>
 </body>
