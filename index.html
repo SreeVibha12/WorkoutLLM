@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Workout Customizer</title>
+</head>
+<body>
+    <h1>Customize Your Workout Routine</h1>
+    
+    <section id="equipment-selection">
+        <h2>Select Your Equipment</h2>
+        <label><input type="checkbox" value="bodyweight"> Bodyweight</label>
+        <label><input type="checkbox" value="dumbbell"> Dumbbell</label>
+        <label><input type="checkbox" value="barbell"> Barbell</label>
+        <label><input type="checkbox" value="kettlebell"> Kettlebell</label>
+        <label><input type="checkbox" value="band"> Band</label>
+        <label><input type="checkbox" value="plate"> Plate</label>
+        <label><input type="checkbox" value="pullup-bar"> Pull-up Bar</label>
+        <label><input type="checkbox" value="bench"> Bench</label>
+    </section>
+
+    <section id="muscle-targeting">
+        <h2>Select Muscles to Target</h2>
+        <!-- Add images for front and back muscle views here -->
+        <img src="front-view.jpg" alt="Front View of Muscles" id="front-view">
+        <img src="back-view.jpg" alt="Back View of Muscles" id="back-view">
+    </section>
+
+    <section id="exercise-display">
+        <h2>Your Exercises</h2>
+        <ul id="exercise-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
