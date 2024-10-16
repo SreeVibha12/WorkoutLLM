@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif, bold;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f0f0f0;
@@ -17,37 +17,73 @@ h1 {
 }
 
 .section-header {
-    
+    text-align: center;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
+.section-header h2 {
+    margin: 0;
+    font-size: 24px; /* Adjust font size as needed */
+    color: #333; /* Dark color for better visibility */
+    text-align: center; /* Center the header text */
+    padding: 10px 0; /* Add some padding for spacing */
+}
+
+#equipment-selection {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+#muscle-selection {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+}
+
 .cube {
-    display: inline-block;
-    margin: 10px;
-    padding: 20px;
-    background-color: #d6f9d4;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    width: 180px;
+    height: 180px;
+    background-color: #f5fffa;
+    border: 1px solid #d3d3d3;
+    border-radius: 15px;
     transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .cube:hover {
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #f0fff0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cube img {
-    max-width: 50px; /* Set image size */
-    display: block;
-    margin: 0 auto 10px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.cube img[src="images/band.png"] {
+    width: 50px;
+    height: 50px;
 }
 
 label {
     cursor: pointer;
+    font-size: 16px;
+    color: #333;
 }
 
 #exercise-list {
