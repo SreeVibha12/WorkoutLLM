@@ -17,6 +17,7 @@ h1 {
 }
 
 .section-header {
+    background-color: powderblue;
     text-align: center;
     padding: 15px;
     border-radius: 5px;
@@ -25,10 +26,10 @@ h1 {
 
 .section-header h2 {
     margin: 0;
-    font-size: 24px; /* Adjust font size as needed */
-    color: #333; /* Dark color for better visibility */
-    text-align: center; /* Center the header text */
-    padding: 10px 0; /* Add some padding for spacing */
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
 }
 
 #equipment-selection {
@@ -75,11 +76,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-.cube img[src="images/band.png"] {
-    width: 50px;
-    height: 50px;
-}
-
 label {
     cursor: pointer;
     font-size: 16px;
@@ -102,12 +98,31 @@ label {
     align-items: center;
 }
 
+.exercise-controls {
+    display: flex;
+    align-items: center; /* Align vertically */
+}
+
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-left: 5px; /* Add some space between buttons */
 }
 
 button:hover {
     color: red;
+}
+
+.large-checkbox {
+    width: 20px; /* Increased width */
+    height: 20px; /* Increased height */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.muscle-image {
+    width: 90px;  /* Set the width to 90px */
+    height: 90px; /* Set the height to 90px */
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Existing margin */
 }

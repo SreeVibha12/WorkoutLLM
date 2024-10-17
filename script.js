@@ -271,12 +271,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         exercisesForMuscle.forEach(exercise => {
                             const li = document.createElement("li");
                             li.className = "exercise-item";
-
-                            // Create UI for sets and reps
                             const sets = document.createElement("div");
                             sets.className = "controls";
-                            sets.innerHTML = `<strong>${exercise}</strong> | Sets: <span class="set-count">1</span> | Reps: <span class="rep-count">10</span>`;
-
+                            sets.innerHTML = `<strong>${exercise}</strong> | Sets: <span class="set-count">1</span>`; // Removed reps display here
+                            
                             // Create buttons for sets
                             const setsMinus = document.createElement("button");
                             setsMinus.textContent = "-";
@@ -287,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     setCountSpan.textContent = currentCount - 1;
                                 }
                             };
-
+                            
                             const setsPlus = document.createElement("button");
                             setsPlus.textContent = "+";
                             setsPlus.onclick = function() {
@@ -295,11 +293,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                 let currentCount = parseInt(setCountSpan.textContent);
                                 setCountSpan.textContent = currentCount + 1;
                             };
-
+                            
                             // Create buttons for reps
                             const reps = document.createElement("div");
-                            reps.className = "controls";
-                            reps.innerHTML = `Reps: <span class="rep-count">10</span>`;
+                            reps.className = "controls"; 
+                            reps.innerHTML = `Reps: <span class="rep-count">10</span>`; // This remains unchanged
                             
                             const repsMinus = document.createElement("button");
                             repsMinus.textContent = "-";
@@ -310,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     repCountSpan.textContent = currentCount - 1;
                                 }
                             };
-
+                            
                             const repsPlus = document.createElement("button");
                             repsPlus.textContent = "+";
                             repsPlus.onclick = function() {
@@ -318,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 let currentCount = parseInt(repCountSpan.textContent);
                                 repCountSpan.textContent = currentCount + 1;
                             };
-
+                            
                             // Create a delete button
                             const deleteButton = document.createElement("button");
                             deleteButton.textContent = "Delete";
