@@ -31,6 +31,14 @@ h1 {
     text-align: center;
     padding: 10px 0;
 }
+.section-header3 {
+    background-color: powderblue;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 
 #equipment-selection {
     margin-top: 20px;
@@ -104,14 +112,19 @@ label {
 }
 
 button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin-left: 5px; /* Add some space between buttons */
+    font-size: 10px;  /* Increase the font size */
+    font-weight: bold; /* Optional: Makes the symbols bold */
+    border-radius: 5px; /* Optional: Adds rounded corners */
 }
 
 button:hover {
     color: red;
+}
+/* Align sets and reps side by side */
+.sets-reps {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds spacing between sets and reps */
 }
 
 .large-checkbox {
@@ -121,8 +134,85 @@ button:hover {
 }
 
 .muscle-image {
-    width: 90px;  /* Set the width to 90px */
-    height: 90px; /* Set the height to 90px */
+    width: 100px;  /* Set the width to 90px */
+    height: 100px; /* Set the height to 90px */
     object-fit: contain; /* Maintain aspect ratio */
     margin-bottom: 10px; /* Existing margin */
+}
+/* Center the entire container of exercises */
+#exercise-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers the list of exercises */
+}
+
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: calc(100% - 1000px); /* Leaves 500px space on both sides */
+    margin: 20px auto; /* Centers the exercise item in the middle */
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    width: 100%; /* Ensures the item stretches across the container */
+}
+
+/* Ensure the content within each exercise is centered and aligned */
+.exercise-content {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.exercise-name {
+    margin-right: auto; /* Keeps name on the left */
+    font-size: 20px;    /* Adjust the size as per your preference */
+    font-weight: bold;
+}
+
+.sets-reps {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds spacing between sets and reps */
+    margin-left: auto;
+}
+
+.controls button {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.delete-btn {
+    margin:10px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+}
+#start-workout-button {
+    display: block;
+    margin: 20px auto; /* Centering the button */
+    font-size: 40px;
+    font-weight: bold;
+    background-color:rgb(238, 163, 163);/* Pale pink color */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Padding around the text */
+    border: none;
+    border-radius: 10px; /* Optional: rounded corners */
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#start-workout-button:hover {
+    background-color: lightcoral; /* Slightly darker shade when hovered */
 }
