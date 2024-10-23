@@ -114,8 +114,92 @@ document.addEventListener("DOMContentLoaded", function() {
     const equipmentCheckboxes = document.querySelectorAll("input[name='equipment']");
     const muscleCheckboxes = document.querySelectorAll("input[name='muscle']");
 
-    // Function to filter exercises based on selected equipment and muscle groups
-    // Function to filter exercises based on selected equipment and muscle groups
+  // This function will handle the start workout button click
+function startWorkout() {
+    // You can also pass data to the next page if necessary using query parameters
+    // Example: 'workout.html?equipment=bodyweight,muscle=Chest'
+    
+    // Navigate to the workout page (replace 'workout.html' with your target page)
+    window.location.href = 'workout.html';
+}
+
+// Add an event listener to the start workout button
+document.getElementById('start-workout-button').addEventListener('click', startWorkout);
+
+// Function to save exercises, sets, and reps to localStorage
+function saveExerciseData() {
+    const exercises = document.querySelectorAll('#exercise-list li');
+    const exerciseData = [];
+
+    exercises.forEach(exercise => {
+        const exerciseId = exercise.id;  // Assuming each exercise has a unique id
+        const setsInput = exercise.querySelector('.sets-input');
+        const repsInput = exercise.querySelector('.reps-input');
+
+        // Store the id, sets, and reps in an object
+        const exerciseInfo = {
+            id: exerciseId,
+            sets: setsInput.value,
+            reps: repsInput.value
+        };
+
+        // Add the exercise info to the array
+        exerciseData.push(exerciseInfo);
+    });
+
+    // Save the array of exercise data to localStorage
+    localStorage.setItem('exerciseData', JSON.stringify(exerciseData));
+}
+
+// Function to load saved exercises, sets, and reps from localStorage
+function loadExerciseData() {
+    // Retrieve saved exercise data from localStorage
+    const exerciseData = JSON.parse(localStorage.getItem('exerciseData')) || [];
+
+    // Clear existing exercise list before loading
+    const exerciseList = document.getElementById('exercise-list');
+    exerciseList.innerHTML = '';
+
+    // Restore the sets and reps values
+    exerciseData.forEach(data => {
+        // Create a new list item for the exercise
+        const exerciseItem = document.createElement('li');
+        exerciseItem.id = data.id; // Set the ID for the list item
+
+        // Assuming you have some HTML structure for each exercise
+        exerciseItem.innerHTML = `
+            <span>${data.id}</span>
+            <input type="number" class="sets-input" value="${data.sets}" placeholder="Sets" />
+            <input type="number" class="reps-input" value="${data.reps}" placeholder="Reps" />
+        `;
+
+        // Append the exercise item to the exercise list
+        exerciseList.appendChild(exerciseItem);
+    });
+}
+
+// Call the loadExerciseData function when the page loads
+window.onload = function () {
+    // Load previously saved selections for equipment and muscles
+    loadSelections();
+
+    // Load previously saved sets and reps data
+    loadExerciseData();
+
+    // Add event listeners to save reps and sets whenever they are changed
+    const allInputs = document.querySelectorAll('.sets-input, .reps-input');
+    allInputs.forEach(input => {
+        input.addEventListener('change', saveExerciseData);
+    });
+
+    // Save the equipment and muscle selections whenever changed
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    allCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', saveSelections);
+    });
+};
+
+
 function filterExercises() {
     const selectedEquipment = Array.from(equipmentCheckboxes)
         .filter(checkbox => checkbox.checked)
